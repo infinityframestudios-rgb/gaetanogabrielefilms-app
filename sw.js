@@ -1,4 +1,4 @@
-const C='gaetano-gabriele-v13',P='gaetano-gabriele-';
+const C='gaetano-gabriele-v14',P='gaetano-gabriele-';
 self.addEventListener('install',e=>self.skipWaiting());
 // cancella solo le PROPRIE cache vecchie (mai quelle di altre app sullo stesso dominio)
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith(P)&&x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
